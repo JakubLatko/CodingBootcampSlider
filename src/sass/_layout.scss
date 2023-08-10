@@ -1,0 +1,74 @@
+@use 'variables' as *;
+
+main{
+    min-height: 100vh;
+    background-image: 
+    url(../assets/images/pattern-bg.svg),
+    url(../assets/images/pattern-curve.svg);
+    background-position: top center, center bottom ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    max-width: 400px;
+    margin-inline: auto;
+}
+
+.slider{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.sliderCard{
+    display: flex;
+    flex-direction: column;
+    img{
+        margin: 1rem;
+        box-shadow: 0px 10px 15px 0px hsla(255, 55%, 60%, 0.4);
+    }
+}
+
+
+.text{
+    text-align: center;
+    background-image:  url(../assets/images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: top center;
+    padding-block-start: 3rem;
+    p{
+        font-weight: 300;
+    }
+    h2{
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        color: $primary-300;
+        span{
+            font-weight: 500;
+            color: $primary-400;
+        }
+    }
+}
+.sliderCard:last-of-type{
+    display: none;
+}
+
+.arrowsWrapper{
+    width: fit-content;
+    position: absolute;
+    top: 52%;
+    left: 40%;
+    padding:.5rem;
+    border-radius: 100vw;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $primary-100;
+    box-shadow:0px 10px 15px 0px hsla(255, 55%, 60%, 0.4) ;
+    button{
+        background: transparent;
+        border: none;
+    }
+}
