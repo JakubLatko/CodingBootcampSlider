@@ -1,14 +1,21 @@
 @use 'variables' as *;
 
+body{
+    background-image: url(../assets/images/pattern-curve.svg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
 main{
     min-height: 100vh;
     background-image: 
-    url(../assets/images/pattern-bg.svg),
-    url(../assets/images/pattern-curve.svg);
+    url(../assets/images/pattern-bg.svg);
+    //url(../assets/images/pattern-curve.svg);
     background-position: top center, center bottom ;
     background-repeat: no-repeat;
     background-size: contain;
-    position: relative;
     max-width: 400px;
     margin-inline: auto;
 }
@@ -17,33 +24,43 @@ main{
     display: flex;
     flex-direction: column;
     padding: 2rem;
+    
 }
 
 .sliderCard{
     display: flex;
     flex-direction: column;
-    img{
+     position: relative;
+     align-items: center;
+    .personImage{
         margin: 1rem;
         box-shadow: 0px 10px 15px 0px hsla(255, 55%, 60%, 0.4);
+       
     }
 }
 
 
 .text{
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background-image:  url(../assets/images/pattern-quotes.svg);
     background-repeat: no-repeat;
-    background-size: 10%;
-    background-position: top center;
+    background-size: 20%;
+    background-position: center 15%;
     padding-block-start: 3rem;
+    gap: 1rem;
+     transform: translateY(-1rem);
     p{
         font-weight: 300;
+        font-size: clamp(.75rem, 4.5vw, 1.25rem);
     }
     h2{
         display: flex;
         flex-direction: column;
         font-weight: 700;
         color: $primary-300;
+        font-size: clamp(1rem, 5vw, 2.25rem);
         span{
             font-weight: 500;
             color: $primary-400;
@@ -56,9 +73,7 @@ main{
 
 .arrowsWrapper{
     width: fit-content;
-    position: absolute;
-    top: 52%;
-    left: 40%;
+    transform: translateY(-2rem);
     padding:.5rem;
     border-radius: 100vw;
     gap: 1rem;
@@ -70,5 +85,62 @@ main{
     button{
         background: transparent;
         border: none;
+    }
+}
+
+@media only screen and (min-width:425px) and (max-width:1023px){
+    .slider{
+        
+    }
+}
+
+@media only screen and (min-width:1024px){
+    main{
+        display: flex;
+        max-width: none;
+        align-items:center ;
+        background-position: right center;
+        background-size: 80vh;
+    }
+    .sliderCard{
+        margin-block: auto;
+        display: flex;
+        flex-direction: row-reverse;
+        flex-basis: 50%;
+    }
+    .slider{
+        padding:1rem 3rem;
+        position: relative;
+        
+    }
+    .text{
+        text-align: left;
+         transform: translateX(10ch);
+         margin-left: 1rem;
+         gap: 2rem;
+        p{
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            min-width: 35ch;
+           
+        }
+        h2{
+            display: block;
+            font-size: clamp(1rem, 1.75vw, 1.75rem);
+        }
+    }
+    .personImage{
+        width: 50%;
+    }
+    .arrowsWrapper{
+        position: absolute;
+        bottom: 0;
+        right: 30%;
+        transform: none;
+    }
+}
+
+@media only screen and (min-width:1440px){
+    .slider{
+        max-width: 1440px;
     }
 }

@@ -16,3 +16,7 @@
 design
 *.md
 node_modules
+public
+package.json
+package-lock.json
+src/assets
